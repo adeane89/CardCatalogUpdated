@@ -38,6 +38,9 @@ namespace CardCatalogUpdated
                             break;
                         case "2":
                             //cardCat.AddBook();
+                            ///Parameter cardCat.AddBook() will cause the book
+                            ///to be added to the book list. 
+                            ///
                             cardCat.ListBooks(cardCat.AddBook());
                             break;
                         case "3":
