@@ -19,7 +19,7 @@ namespace CardCatalogUpdated
             _filename = fileName;
         }
         
-        public void ListBooks()
+        public void ListBooks(Book addbook = null)
         {
             if (File.Exists(_filename))
             {
@@ -46,6 +46,17 @@ namespace CardCatalogUpdated
                 new Book{Title = "Percy Jackson", Author = "Rick Riordan", Genre = "Young Adult" },
             };
 
+
+            if (addbook == null)
+            {
+
+            }
+            else
+            {
+                Books.Add(addbook);
+            } 
+
+
             var alphabetizedBooks = from AllBooks in Books
                                     orderby AllBooks.Title ascending
                                     select AllBooks;
@@ -55,7 +66,7 @@ namespace CardCatalogUpdated
 
         }
 
-        public void AddBook()
+        public Book AddBook()
         {
             Console.WriteLine("Please enter a Title: ");
             string bookTitle = Console.ReadLine();
@@ -67,7 +78,9 @@ namespace CardCatalogUpdated
             string bookGenre = Console.ReadLine();
             
             Book bookAddition = new Book() { Title = bookTitle, Author = bookAuthor, Genre = bookGenre };
-            Books.Add(bookAddition);
+            //Books.Add(bookAddition);
+
+            return bookAddition;
         }
 
         public void Save()
