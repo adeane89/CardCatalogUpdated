@@ -37,7 +37,8 @@ namespace CardCatalogUpdated
                             cardCat.ListBooks();
                             break;
                         case "2":
-                            cardCat.ListBooks(cardCat.AddBook());
+                            //cardCat.ListBooks()
+                            cardCat.AddBook();
                             break;
                         case "3":
                             cardCat.Save();

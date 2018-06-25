@@ -6,6 +6,7 @@ using System.Linq;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Collections;
 
 namespace CardCatalogUpdated
 {
@@ -19,12 +20,12 @@ namespace CardCatalogUpdated
             _filename = fileName;
         }
 
-        public void ListBooks(Book addBook = null)
+        public void ListBooks()
         {
             if (File.Exists(_filename))
             {
-                Stream readStream = new FileStream(_filename, FileMode.Open);
                 BinaryFormatter bf = new BinaryFormatter();
+                Stream readStream = new FileStream(_filename, FileMode.Open);
                 try
                 {
                     Books = (List<Book>)bf.Deserialize(readStream);
@@ -45,11 +46,13 @@ namespace CardCatalogUpdated
                 new Book{Title = "Salem's Lot", Author = "Stephen King", Genre = "Horror"},
                 new Book{Title = "Percy Jackson", Author = "Rick Riordan", Genre = "Young Adult" },
             };
-            
+
+            /*
             if (addBook != null)
             {
                 Books.Add(addBook);
             }
+            */
 
             var alphabetizedBooks = from AllBooks in Books
                                     orderby AllBooks.Title ascending
@@ -60,34 +63,36 @@ namespace CardCatalogUpdated
 
         public Book AddBook()
         {
-            //Book newBook = new Book();
+            Book newBooks = new Book();
 
             Console.WriteLine("Please enter a Title: ");
-            //newBook.Title = Console.ReadLine();
-            string bookTitle = Console.ReadLine();
+            newBooks.Title = Console.ReadLine();
+            //string bookTitle = Console.ReadLine();
 
             Console.WriteLine("Please enter an Author: ");
-            //newBook.Author = Console.ReadLine();
-            string bookAuthor = Console.ReadLine();
+            newBooks.Author = Console.ReadLine();
+            //string bookAuthor = Console.ReadLine();
 
             Console.WriteLine("Please enter a genre: ");
-            //newBook.Genre = Console.ReadLine();
-            string bookGenre = Console.ReadLine();
+            newBooks.Genre = Console.ReadLine();
+            //string bookGenre = Console.ReadLine();
 
-            Book newBook = new Book() { Title = bookTitle, Author = bookAuthor, Genre = bookGenre };
-            //ListWithAdded(newBook);
-            return newBook;
+            //Book newBooks = new Book() { Title = newBooks.Title, Author = newBooks.Author, Genre = newBooks.Genre }; ;
+            Books.Add(newBooks);
+            //newBook = { Title = bookTitle, Author = bookAuthor, Genre = bookGenre };
+            ListWithAdded(newBooks);
+            return newBooks;
         }
-        /*
+
         static void ListWithAdded(Book newBook)
         {
             Console.WriteLine("{0} written by {1}", newBook.Title, newBook.Author);
         }
-        */
+
         public void Save()
         {
-            FileStream stream = new FileStream(_filename, FileMode.Create);
             BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(_filename, FileMode.Create);
             try
             {
                 formatter.Serialize(stream, Books);
