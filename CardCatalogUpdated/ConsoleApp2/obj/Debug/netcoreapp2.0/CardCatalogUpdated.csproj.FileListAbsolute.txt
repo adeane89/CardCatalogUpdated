@@ -1,0 +1,11 @@
+C:\Users\Owner\Documents\GitHub\CardCatalogUpdated\ConsoleApp2\bin\Debug\netcoreapp2.0\CardCatalogUpdated.deps.json
+C:\Users\Owner\Documents\GitHub\CardCatalogUpdated\ConsoleApp2\bin\Debug\netcoreapp2.0\CardCatalogUpdated.runtimeconfig.json
+C:\Users\Owner\Documents\GitHub\CardCatalogUpdated\ConsoleApp2\bin\Debug\netcoreapp2.0\CardCatalogUpdated.runtimeconfig.dev.json
+C:\Users\Owner\Documents\GitHub\CardCatalogUpdated\ConsoleApp2\bin\Debug\netcoreapp2.0\CardCatalogUpdated.dll
+C:\Users\Owner\Documents\GitHub\CardCatalogUpdated\ConsoleApp2\bin\Debug\netcoreapp2.0\CardCatalogUpdated.pdb
+C:\Users\Owner\Documents\GitHub\CardCatalogUpdated\ConsoleApp2\obj\Debug\netcoreapp2.0\CardCatalogUpdated.csprojAssemblyReference.cache
+C:\Users\Owner\Documents\GitHub\CardCatalogUpdated\ConsoleApp2\obj\Debug\netcoreapp2.0\CardCatalogUpdated.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Documents\GitHub\CardCatalogUpdated\ConsoleApp2\obj\Debug\netcoreapp2.0\CardCatalogUpdated.AssemblyInfoInputs.cache
+C:\Users\Owner\Documents\GitHub\CardCatalogUpdated\ConsoleApp2\obj\Debug\netcoreapp2.0\CardCatalogUpdated.AssemblyInfo.cs
+C:\Users\Owner\Documents\GitHub\CardCatalogUpdated\ConsoleApp2\obj\Debug\netcoreapp2.0\CardCatalogUpdated.dll
+C:\Users\Owner\Documents\GitHub\CardCatalogUpdated\ConsoleApp2\obj\Debug\netcoreapp2.0\CardCatalogUpdated.pdb
