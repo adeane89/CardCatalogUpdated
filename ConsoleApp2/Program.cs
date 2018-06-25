@@ -16,7 +16,7 @@ namespace CardCatalogUpdated
             Console.WriteLine("Please enter a file name: ");
             string file = Console.ReadLine();
             CardCatalogUpdated cardCat = new CardCatalogUpdated(file);
-
+            
             string promptAnswer = "";
             do
             {
@@ -37,7 +37,7 @@ namespace CardCatalogUpdated
                             cardCat.ListBooks();
                             break;
                         case "2":
-                            cardCat.AddBook();
+                            cardCat.ListBooks(cardCat.AddBook());
                             break;
                         case "3":
                             cardCat.Save();

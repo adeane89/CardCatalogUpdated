@@ -18,22 +18,22 @@ namespace CardCatalogUpdated
         {
             _filename = fileName;
         }
-        
-        public void ListBooks()
+
+        public void ListBooks(Book addBook = null)
         {
             if (File.Exists(_filename))
             {
+                Stream readStream = new FileStream(_filename, FileMode.Open);
+                BinaryFormatter bf = new BinaryFormatter();
                 try
                 {
-                    BinaryFormatter bf = new BinaryFormatter();
-                    Stream readStream = new FileStream(_filename, FileMode.Open);
                     Books = (List<Book>)bf.Deserialize(readStream);
                     readStream.Close();
                     readStream.Dispose();
                 }
-                catch (Exception ex)
+                catch (SerializationException ex)
                 {
-                    Console.WriteLine(ex);
+                    Console.WriteLine("Failed to deserialize: {0}", ex.Message);
                 }
             }
 
@@ -45,38 +45,60 @@ namespace CardCatalogUpdated
                 new Book{Title = "Salem's Lot", Author = "Stephen King", Genre = "Horror"},
                 new Book{Title = "Percy Jackson", Author = "Rick Riordan", Genre = "Young Adult" },
             };
+            
+            if (addBook != null)
+            {
+                Books.Add(addBook);
+            }
 
             var alphabetizedBooks = from AllBooks in Books
                                     orderby AllBooks.Title ascending
                                     select AllBooks;
 
-            //replaced the forEach loop with this lambda expression
             Books.ForEach(p => Console.WriteLine("{0} written by {1}", p.Title, p.Author));
-
         }
 
-        public void AddBook()
+        public Book AddBook()
         {
+            //Book newBook = new Book();
+
             Console.WriteLine("Please enter a Title: ");
+            //newBook.Title = Console.ReadLine();
             string bookTitle = Console.ReadLine();
 
             Console.WriteLine("Please enter an Author: ");
+            //newBook.Author = Console.ReadLine();
             string bookAuthor = Console.ReadLine();
 
             Console.WriteLine("Please enter a genre: ");
+            //newBook.Genre = Console.ReadLine();
             string bookGenre = Console.ReadLine();
-            
-            Book bookAddition = new Book() { Title = bookTitle, Author = bookAuthor, Genre = bookGenre };
-            Books.Add(bookAddition);
-        }
 
+            Book newBook = new Book() { Title = bookTitle, Author = bookAuthor, Genre = bookGenre };
+            //ListWithAdded(newBook);
+            return newBook;
+        }
+        /*
+        static void ListWithAdded(Book newBook)
+        {
+            Console.WriteLine("{0} written by {1}", newBook.Title, newBook.Author);
+        }
+        */
         public void Save()
         {
-            BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(_filename, FileMode.Create);
-            formatter.Serialize(stream, Books);
-            stream.Close();
-            stream.Dispose();
+            BinaryFormatter formatter = new BinaryFormatter();
+            try
+            {
+                formatter.Serialize(stream, Books);
+                stream.Close();
+                stream.Dispose();
+            }
+
+            catch (SerializationException ex)
+            {
+                Console.WriteLine("Failed to serialize: {0}", ex.Message);
+            }
         }
     }
 }
