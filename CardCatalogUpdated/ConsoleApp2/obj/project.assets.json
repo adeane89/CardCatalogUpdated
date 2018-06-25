@@ -664,23 +664,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Owner\\.nuget\\packages\\": {},
+    "C:\\Users\\jorda\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Owner\\Documents\\GitHub\\CardCatalogUpdated\\ConsoleApp2\\CardCatalogUpdated.csproj",
+      "projectUniqueName": "C:\\Users\\jorda\\source\\repos\\ConsoleApp2\\CardCatalogUpdated\\ConsoleApp2\\CardCatalogUpdated.csproj",
       "projectName": "CardCatalogUpdated",
-      "projectPath": "C:\\Users\\Owner\\Documents\\GitHub\\CardCatalogUpdated\\ConsoleApp2\\CardCatalogUpdated.csproj",
-      "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Owner\\Documents\\GitHub\\CardCatalogUpdated\\ConsoleApp2\\obj\\",
+      "projectPath": "C:\\Users\\jorda\\source\\repos\\ConsoleApp2\\CardCatalogUpdated\\ConsoleApp2\\CardCatalogUpdated.csproj",
+      "packagesPath": "C:\\Users\\jorda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jorda\\source\\repos\\ConsoleApp2\\CardCatalogUpdated\\ConsoleApp2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jorda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
